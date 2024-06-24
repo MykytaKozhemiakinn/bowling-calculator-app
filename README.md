@@ -18,6 +18,10 @@ frame is a strike or a spare.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
 
+## Clone repo ⬇️
+
+Clone repository via https or ssh, then go to the cloned repo, and install dependencies.
+
 ## Install dependencies 📦
 
 Run `npm i` to install all required dependencies. **Prerequisites - node at least v18.19.1, npm - 10.2.4**. For convenient managing 2 or more node/npm versions,
