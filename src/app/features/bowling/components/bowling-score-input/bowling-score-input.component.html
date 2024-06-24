@@ -1,0 +1,7 @@
+<div class="score-input">
+  <label>{{ label }}</label>
+  <input type="number" min="0" max="10" [formControl]="control" />
+  @if (control.hasError('required')) {
+    <app-error-text [errorText]="minRollValueError" />
+  }
+</div>

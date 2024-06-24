@@ -1,0 +1,17 @@
+<div class="score-container">
+  <h2>Current Score: {{ score }}</h2>
+  <div class="frames-grid">
+    @for (frame of frames; track $index) {
+      <div class="frame">
+        <h4>Frame {{ $index + 1 }}</h4>
+        <div class="rolls">
+          <span>{{ frame.firstRoll }}</span> -
+          <span>{{ frame.secondRoll }}</span>
+          @if (frame?.thirdRoll) {
+            <span> - {{ frame.thirdRoll }}</span>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</div>

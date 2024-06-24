@@ -1,0 +1,42 @@
+<div class="bowling-dashboard">
+  <div class="content">
+    <div class="score-list">
+      <app-score-list [frames]="frames" [score]="score$ | async" />
+    </div>
+
+    <div class="input-section">
+      @if (!(isGameOver$ | async)) {
+        <form
+          [formGroup]="framesForm"
+          (ngSubmit)="formSubmitted()"
+          class="input-form">
+          <div class="input-grid">
+            <div class="input-column">
+              <app-score-input
+                label="First roll"
+                [control]="framesForm.controls.firstRoll" />
+            </div>
+            <div class="input-column">
+              <app-score-input
+                label="Second roll"
+                [control]="framesForm.controls.secondRoll" />
+            </div>
+            @if (showThirdRoll) {
+              <div class="input-column">
+                <app-score-input
+                  label="Third roll"
+                  [control]="framesForm.controls.thirdRoll!" />
+              </div>
+            }
+          </div>
+          @if (framesForm.hasError('frameScoreInvalid')) {
+            <app-error-text [errorText]="totalFrameScoreError" />
+          }
+          <button type="submit">Calculate score</button>
+        </form>
+      } @else {
+        <button (click)="resetGame()">Reset game</button>
+      }
+    </div>
+  </div>
+</div>
